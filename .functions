@@ -8,6 +8,14 @@ function hl (){
     echo "code is copied to clipboard"
 }
 
+# weather
+function wt () {
+    LAT=$(echo $LOC | cut -d" " -f2)
+    LON=$(echo $LOC | cut -d" " -f4)
+    CITY="Munich"
+    curl -4 http://wttr\.in/$CITY
+}
+
 #install new software
 function install {
 	brew cask install "$1"

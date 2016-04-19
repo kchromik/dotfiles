@@ -11,6 +11,8 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 alias gp="git pull"
+alias gundo="git reset --soft HEAD~"
+alias addlocalizables="/Users/kevinchromik/.dotfiles/addlocalizablekeys"
 
 # programs
 alias slt='open -a "Sublime Text 2"'
