@@ -2,14 +2,15 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH="/Users/kchromik/.oh-my-zsh"
+export DEFAULT_USER="kchromik"
+export "JAVA_HOME=/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 plugins=(git osx)
 
@@ -29,9 +30,10 @@ alias ll="ls -la -G"
 alias g="git"
 alias gp="git pull"
 alias gundo="git reset --soft HEAD~"
+alias gamend="git commit -av --amend --no-edit"
 alias zshconfig="a ~/.zshrc"
-alias install="brew cask install"
-alias uninstall="brew cask uninstall"
+alias install="brew install"
+alias uninstall="brew uninstall"
 
 alias c='pygmentize -O style=monokai -f console256 -g'
 
