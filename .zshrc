@@ -2,9 +2,9 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
+export PATH=/opt/homebrew/bin:$PATH
 export ZSH="/Users/kchromik/.oh-my-zsh"
 export DEFAULT_USER="kchromik"
-export "JAVA_HOME=/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -12,7 +12,7 @@ export "JAVA_HOME=/Applications/Android Studio.app/Contents/jre/jdk/Contents/Hom
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
 
-plugins=(git osx)
+plugins=(git macos)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -25,13 +25,12 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 alias o="open ."
 
-alias a="atom"
 alias ll="ls -la -G"
 alias g="git"
 alias gp="git pull"
 alias gundo="git reset --soft HEAD~"
 alias gamend="git commit -av --amend --no-edit"
-alias zshconfig="a ~/.zshrc"
+alias zshconfig="code ~/.zshrc"
 alias install="brew install"
 alias uninstall="brew uninstall"
 
@@ -49,8 +48,8 @@ function md() {
 	mkdir -p "$@" && cd "$@"
 }
 
-function atom {
-    open -a '/Applications/Atom.app' "$1"
+function code {
+    open -a '/Volumes/Macintosh HD/Applications/Visual Studio Code.app' "$1"
 }
 
 # Go to the root of the current git project, or just go one folder up
@@ -63,3 +62,7 @@ function up() {
     cd $git_dir
   fi
 }
+export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
+eval "$(rbenv init - zsh)"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
