@@ -3,8 +3,8 @@
 
 # Path to your oh-my-zsh installation.
 export PATH=/opt/homebrew/bin:$PATH
-export ZSH="/Users/kchromik/.oh-my-zsh"
-export DEFAULT_USER="kchromik"
+export ZSH="$HOME/.oh-my-zsh"
+export DEFAULT_USER="$(whoami)"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
